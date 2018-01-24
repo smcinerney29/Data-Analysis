@@ -56,5 +56,33 @@ mtcars %>% mutate(sqrtMPG = sqrt(mpg), logMPG = log(mpg)) %>% select (mpg,sqrtMP
 
 BREAK
 
+setup3.R
+install.packages("readr")
+install.packages("modelr")
+install.packages("randomForest")
+install.packages("ggplot2")
+library(readr)
+library(modelr)
+library(randomForest)
+library(ggplot2)
+data(diamonds)
+diamonds %>% dim()
+diamonds %>% names()
+diamtrain <- diamonds %>% sample_frac(0,30)
+diamtest <- diamonds %>% sample_frac(0.10)
+diamtrain <- diamonds %>% sample_frac(0.30)
+diamtest %>% dim()
+dimtrain
+diamtrain %>% dim()
+#Predictive MOde
+#predictive model
+#predicting "price" by all other variables
+#use "randomForst"
+pricemodel <- randomForest(price ~ . , data=diamtrain)
+pricemodel <- lm(price ~ . , data=diamtrain)
+pricemodel
+history(50(
+history(50)
+
 
 
