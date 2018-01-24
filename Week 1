@@ -83,6 +83,22 @@ pricemodel <- lm(price ~ . , data=diamtrain)
 pricemodel
 history(50(
 history(50)
-
+rmse(pricemodel, diamtrain)
+rmse(pricemodel, diamtest)
+mae(pricemodel, diamtest)
+mae(pricemodel, diamtrain)
+rsquare(pricemodel, diamtrain)
+rsquare(pricemodel, diamtest)
+qae(pricemodel, diamtest)
+# Old Way / Base R
+GE1 <- read.csv("https://raw.githubusercontent.com/RWorkshop/workshopdatasets/master/GEdata.csv")
+# New Way / Tidyverse
+library(readr)
+GE2 <- read_csv("https://raw.githubusercontent.com/RWorkshop/workshopdatasets/master/GEdata.csv")
+# What is the Difference?
+library(dplyr)
+glimpse(GE1)
+glimpse(GE2)
+history(50)
 
 
